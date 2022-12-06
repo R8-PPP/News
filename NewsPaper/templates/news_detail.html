@@ -1,0 +1,16 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+news_detail
+{% endblock title %}
+
+{% block content %}
+    <h1>{{ news_detail.title|censor }}</h1>
+
+    <p align="left">Дата публикации: {{ news_detail.dateCreation|date:'d M Y' }}</p>
+    <hr>
+
+    <p align="left">{{ news_detail.text|censor }}</p>
+{% endblock content %}
